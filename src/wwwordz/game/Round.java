@@ -187,13 +187,13 @@ public class Round extends Object {
 	public void setPoints(String nick, int points) throws WWWordzException {
 
 		Date begin = new Date();
-		if (begin.before(report)) {
+		/*if (begin.before(report)) {
 			throw new WWWordzException("Not valid before Report stage");
 		} else if (begin.after(ranking)) {
 			throw new WWWordzException("Not valid in Ranking stage");
 		} else if (!roundPlayers.containsKey(nick)) {
 			throw new WWWordzException("cenas");
-		}
+		}*/
 
 		players.addPoints(nick, points);
 	}

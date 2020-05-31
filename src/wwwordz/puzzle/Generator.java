@@ -35,7 +35,7 @@ public class Generator extends Object {
 	public Puzzle generate() {
 
 		Puzzle puzzle = new Puzzle();
-		Table table = new Table();
+		Table table = new Table(0);
 		List<Cell> list = table.getEmptyCells();
 		while (list.size() > 0) {
 

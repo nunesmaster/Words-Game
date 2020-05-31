@@ -43,8 +43,17 @@ public class Puzzle extends Object implements Serializable {
 		this.table = table;
 	}
 
-	public static class Solution {
+	public static class Solution implements Serializable{
 
+		@Override
+		public String toString() {
+			return "Solution [word=" + word + "]";
+		}
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		List<Cell> cells;
 		String word;
 		public Solution() {}
@@ -63,6 +72,7 @@ public class Puzzle extends Object implements Serializable {
 
 		public int getPoints() {
 			int points = 1;
+			//System.out.println(word);
 			if (word.length() == 3)
 				return points;
 			else
@@ -82,7 +92,8 @@ public class Puzzle extends Object implements Serializable {
 				return;
 			} else {
 				points = (points * 2) + 1;
-				points(size++, points);
+				size++;
+				points(size, points);
 			}
 		}
 	}
